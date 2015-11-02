@@ -466,10 +466,15 @@ function attemptSingleSignOn() {
   // pass request.cookies to a small user script
   var file = appjet.config['etherpad.SSOScript'];
 
+  var headers_env = {};
+  Object.keys(request.headers).forEach(function(i) {
+      headers_env['HTTP_' + i.toUpperCase().replace(/-/g, '_')] = request.headers[i];
+  });
+
   var cmd = exec(file);
 
   // note that this will block until script execution returns
-  var result = cmd.write(fastJSON.stringify(request.cookies)).result();
+  var result = cmd.write(fastJSON.stringify({headers: headers_env, cookies: request.cookies})).result();
   var val = false;
 
   // we try to parse the result as a JSON string, if not, return null.
