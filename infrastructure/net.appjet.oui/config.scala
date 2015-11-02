@@ -219,6 +219,10 @@ object config {
     Map((for (m <- allProperties) yield ((m.getName, () => m.invoke(this)))): _*);
   val propertiesPattern = Pattern.compile("\\[("+allProperties.map(x => "(?:"+x.getName()+")").mkString("|")+")\\]");
 
+  // etc
+  @ConfigParam(value = "the default redirect location after signout", argName = "locationAfterSignOut")
+  def locationAfterSignOut = stringOrElse("locationAfterSignOut", null);
+
   override def toString() =
     (allProperties.map(m => m.getName()+" -> "+m.invoke(this)) ++
      values.keys.toList.filter(! allPropertiesMap.contains(_)).map(k => k+" -> "+values(k))).mkString("[Config ", ", ", "]");

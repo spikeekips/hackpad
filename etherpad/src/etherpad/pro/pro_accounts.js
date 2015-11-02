@@ -526,6 +526,10 @@ function isAccountSignedIn() {
   if (getSessionProAccount()) {
     return true;
   } else {
+    if (request.path == '/ep/account/sign-out') {
+      return false;
+    }
+
     // if the user is not signed in, check to see if he should be signed in
     // by calling an external script.
     if(appjet.config['etherpad.SSOScript']) {
