@@ -1,0 +1,12 @@
+.git
+.*
+CONTRIBUTORS
+COPYING
+DOCKER.md
+Dockerfile
+INSTALL
+LICENSE
+README.md
+contrib
+client
+etherpad/data/*

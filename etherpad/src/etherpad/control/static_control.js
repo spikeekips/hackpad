@@ -63,6 +63,7 @@ function onRequest() {
   for (fmt in staticSubDirs) {
     disp.addLocations([[PrefixMatcher('/static/'+fmt+'/'), faststatic.directoryServer(staticBase+'/'+fmt+'/', opts)]]);
   }
+  disp.addLocations([[PrefixMatcher('/static/themes/'), faststatic.directoryServer('/themes/', opts)]]);
 
   return disp.dispatch();
 }

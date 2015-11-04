@@ -41,6 +41,12 @@ sed 's:logDir = .*:logDir = ./data/logs:'                               -i'' eth
 [ -z "${HACKPAD_VERBOSE}" ]                           || echo "verbose = ${HACKPAD_VERBOSE}"                    >> etherpad/etc/etherpad.local.properties
 [ -z "${HACKPAD_SMTP_SERVER}" ]                       || echo "smtpServer = ${HACKPAD_SMTP_SERVER}"             >> etherpad/etc/etherpad.local.properties
 
+sed "s:__location_after_signout__:${HACKPAD_LOCATION_AFTER_SIGNOUT}:"                       -i'' etherpad/etc/etherpad.local.properties
+
+if [ -f /bootstrap.sh ];then
+    bash /bootstrap.sh.sh
+fi
+
 ./bin/run.sh $@
 
 #vim: set tw=1000000000000:
