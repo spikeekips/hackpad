@@ -17,8 +17,8 @@ sed 's:theme = default:theme = spikeekips:'                             -i'' eth
 sed 's:__welcome_pad_source_id__:WELCOMEPAD:'                           -i'' etherpad/etc/etherpad.local.properties
 sed 's:__feature_help_pad_source_id__:FEATUREHELPPAD:'                  -i'' etherpad/etc/etherpad.local.properties
 sed 's:logDir = .*:logDir = ./data/logs:'                               -i'' etherpad/etc/etherpad.local.properties
-#sed 's:listen = 9000:listen = 80:'                                      -i'' etherpad/etc/etherpad.local.properties
-#sed 's:solrHostPort = 127.0.0.1\:9000:solrHostPort = 127.0.0.1\:80:'    -i'' etherpad/etc/etherpad.local.properties
+sed 's:listen = 9000:listen = 80:'                                      -i'' etherpad/etc/etherpad.local.properties
+sed 's:solrHostPort = 127.0.0.1\:9000:solrHostPort = 127.0.0.1\:80:'    -i'' etherpad/etc/etherpad.local.properties
 
 [ -z "${HACKPAD_DOMAIN}" ]                            || sed "s:topdomains = localhost,localhost.localdomain:topdomains = ${HACKPAD_DOMAIN}:"        -i'' etherpad/etc/etherpad.local.properties
 [ -z "${HACKPAD_AWS_REGION}" ]                        || sed "s:s3Region = us-east-1:s3Region = ${HACKPAD_AWS_REGION}:"                              -i'' etherpad/etc/etherpad.local.properties
