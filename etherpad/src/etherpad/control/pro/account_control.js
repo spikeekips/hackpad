@@ -710,27 +710,24 @@ function render_sign_out_get() {
 
   var origin = request.params.origin || domains.getRequestDomainRecord().subDomain;
   var redirectUrl;
+  if (nextAcctToSignOut && nextAcctToSignOut.domainId != domains.getRequestDomainId()) {
+    redirectUrl = request.scheme + "://" + domains.fqdnForDomainId(nextAcctToSignOut.domainId) + "/ep/account/sign-out?origin=" + origin;
+  } else {
+    // The cookie was out of sync with reality
+    // TODO (remove this check i don't think it's needed anymore)
+    if (nextAcctToSignOut && wasAlreadySignedOut) {
+      pro_accounts.updateCookieSignedInAcctsOnSignOut(nextAcctToSignOut.id);
+    }
+    // We're done signing out!
+    pro_accounts.setCookieSignedInAccts([]);
+    //var originId = domains.getDomainRecordFromSubdomain(origin).id;
+    //redirectUrl = request.scheme + "://" + domains.fqdnForDomainId(originId) + "/";
 
-  // get next
-  if (request.params.next) {
-    redirectUrl = request.params.next;
-  } else if (appjet.config.locationAfterSignOut) {
-    redirectUrl = appjet.config.locationAfterSignOut;
-  }
-
-  if (! redirectUrl) {
-    if (nextAcctToSignOut && nextAcctToSignOut.domainId != domains.getRequestDomainId()) {
-      redirectUrl = request.scheme + "://" + domains.fqdnForDomainId(nextAcctToSignOut.domainId) + "/ep/account/sign-out?origin=" + origin;
-    } else {
-      // The cookie was out of sync with reality
-      // TODO (remove this check i don't think it's needed anymore)
-      if (nextAcctToSignOut && wasAlreadySignedOut) {
-        pro_accounts.updateCookieSignedInAcctsOnSignOut(nextAcctToSignOut.id);
-      }
-      // We're done signing out!
-      pro_accounts.setCookieSignedInAccts([]);
-      var originId = domains.getDomainRecordFromSubdomain(origin).id;
-      redirectUrl = request.scheme + "://" + domains.fqdnForDomainId(originId) + "/";
+    // get next
+    if (request.params.next) {
+      redirectUrl = request.params.next;
+    } else if (appjet.config.locationAfterSignOut) {
+      redirectUrl = appjet.config.locationAfterSignOut;
     }
   }
 
