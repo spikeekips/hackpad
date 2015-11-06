@@ -44,7 +44,7 @@ sed 's:solrHostPort = 127.0.0.1\:9000:solrHostPort = 127.0.0.1\:80:'    -i'' eth
 sed "s:__location_after_signout__:${HACKPAD_LOCATION_AFTER_SIGNOUT}:"                       -i'' etherpad/etc/etherpad.local.properties
 
 if [ -f /bootstrap.sh ];then
-    bash /bootstrap.sh.sh
+    bash /bootstrap.sh
 fi
 
 ./bin/run.sh $@
