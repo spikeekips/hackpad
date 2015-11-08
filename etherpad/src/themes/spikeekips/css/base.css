@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic,700,700italic&subset=latin,greek,greek-ext,cyrillic-ext,latin-ext,cyrillic');
+
+#group_create input[type=text] {
+    padding: 0.6em !important;
+}
+
+#debugmenu {
+    display: none;
+}
+
+#pad-page-footer-spikeekips {
+    width: auto;
+    clear: both;
+    border-top: 1px dotted #ccc;
+    padding: 10px 2px;
+    margin: 0px auto 0 auto;
+    font-size: 13px;
+    color: #888;
+    text-shadow: 0 1px 0 #fff;
+    text-align: center;
+}
+
+#pad-page-footer {
+    width: auto;
+    clear: both;
+    border-top: 1px dotted #ccc;
+    padding: 10px 2px;
+    margin: 0px auto 0 auto;
+    font-size: 13px;
+    color: #888;
+    text-shadow: 0 1px 0 #fff;
+    text-align: center;
+}
+
+#pad-page-footer-spikeekips a:link, #pad-page-footer-spikeekips a:visited {
+    color: #888;
+    text-decoration: underline;
+}
+
+#account {
+    position: fixed;
+    width: 100%;
+    top: auto;
+    bottom: 1em;
+}
+
+#account-dropdown .hp-ui-button-menu-wrapper {
+    display: block;
+    position: static;
+}
+
+#account-dropdown.hp-ui-button-menu ul {
+    position: static;
+    top: 13px;
+    left: -8px;
+    padding: 5px 0;
+    z-index: 2147483647;
+    list-style: none;
+    background-color: transparent;
+    text-align: left;
+    text-transform: none;
+    overflow: auto;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#account-dropdown {
+    width: 100%;
+    padding-right: 1em;
+    box-sizing: border-box;
+}
+
+#account-dropdown > a.hp-ui-button-content,
+#account-dropdown > img.hp-ui-button-arrow {
+    display: none;
+}
+
+#faccountnav {
+    margin-left: 0;
+    height: auto;
+}
+
+#account-dropdown .hp-ui-button-list-ul li:first-child {
+    text-align: left;
+}
+
+#account-dropdown .profile-pic {
+    margin-right: 0.6em;
+}
+
+#account-dropdown .hp-ui-button-list-ul li:nth-child(3) {
+    display: none;
+}
+
+#otheruserstable,
+#otheruserstable.open {
+    display: block !important;
+    overflow: visible;
+    width: 100%;
+    position: static;
+    top: 0;
+    z-index: 1;
+    min-height: 200px;
+    max-height: 300px;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 2px;
+    padding: 5px 0;
+    border: 0;
+}
+
+#otheruserstable.open figcaption {
+    color: inherit;
+}
+
+#otheruserstable.open li:hover {
+    background-color: inherit;
+}
+
+#editor {
+    font-family: 'Ubuntu Mono', monospace !important;
+    font-size: 15px;
+}
+
+#editor>div:first-child span {
+    font-size: 2.7em;
+    font-family: 'Ubuntu Mono', monospace !important;
+}
+
+.dataTable {
+    font-family: 'Ubuntu Mono', monospace !important;
+    font-size: 15px;
+}
+
+.dataTable th,
+.dataTable td {
+    padding: 0.6em;
+    height: auto;
+}
+
+textarea.handsontableInput {
+    font-size: 0.95em;
+}
+
+ul.list-code, ul.list-code1 {
+    font-size: 0.95em;
+}
+
+ul.listindent1, ol.listindent1 {
+    margin-left: 0;
+}
+.ace-line ul {
+    margin-left: 1.5em;
+}
+
+ul.listtype-hone li {
+    font-size: inherit;
+}
+
+ul.listtype-hone li span {
+    font-size: 2.4em;
+}
+
+#editor>div>span.b:only-child, #editor>div.toc-entry>span {
+    font-size: 2.1em;
+}
+
+div.ace-line {
+    font-size: 1em;
+}
+
+ul.listtype-hthree li {
+    font-size: 1.8em;
+}
