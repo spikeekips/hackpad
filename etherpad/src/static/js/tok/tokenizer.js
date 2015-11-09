@@ -52,7 +52,7 @@ var Tokenizer = function(rules) {
     this.matchMappings = {};
     for (var key in this.states) {
         var state = this.states[key];
-        console.log("Status is " + state);
+        //console.log("Status is " + state);
         var ruleRegExps = [];
         var matchTotal = 0;
         var mapping = this.matchMappings[key] = {defaultToken: "text"};
@@ -233,7 +233,7 @@ var Tokenizer = function(rules) {
             var stack = [];
 
         var currentState = startState || "start";
-        console.log("Current stats is :" + currentState)
+        //console.log("Current stats is :" + currentState)
         var state = this.states[currentState];
         if (!state) {
             currentState = "start";
@@ -299,7 +299,7 @@ var Tokenizer = function(rules) {
             }
 
             if (value) {
-                console.log (JSON.stringify(type));
+                //console.log (JSON.stringify(type));
                 if (typeof type === "string") {
                     if ((!rule || rule.merge !== false) && token.type === type) {
                         token.value += value;

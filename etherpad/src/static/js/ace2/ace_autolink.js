@@ -133,7 +133,7 @@ ace.autolink = function(editor) {
    */
   function handleAutocomplete() {
     var cs = editor.getCurrentCallStack();
-    console.log("type=" + cs.type);
+    //console.log("type=" + cs.type);
 
     // Don't trigger autolink if the caretWord is in an autocompleted link
     var isLink = caretWordInLink();

@@ -156,7 +156,7 @@ var padeditor = (function(){
         savedById: pad.getUserId(),
         revNum: revNum
       }, function(data) {
-        console.log(data);
+        //console.log(data);
         for (var i = 0; i < data.length; i++) {
           if (data[i].revNum == String(revNum)) {
             padeditor.restoreRevisionId(data[i].id);

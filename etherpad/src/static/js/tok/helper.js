@@ -135,7 +135,7 @@ define(function(require, exports, module) {
     new Mode("verilog", "Verilog", require("./rules/verilog_highlight_rules").VerilogHighlightRules, ["verilog"]),
     new Mode("vhdl", "VHDL", require("./rules/vhdl_highlight_rules").VHDLHighlightRules, ["vhdl"]),
     new Mode("xml", "XML", require("./rules/xml_highlight_rules").XmlHighlightRules, ["xml"]),
-    new Mode("yaml", "Yaml", require("./rules/yaml_highlight_rules").YamlHighlightRules, ["yaml"])
+    new Mode("yaml", "Yaml", require("./rules/yaml_highlight_rules").YamlHighlightRules, ["yaml", "yml"])
   ];
 
   return function(filename) {
