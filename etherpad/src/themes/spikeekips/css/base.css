@@ -123,7 +123,7 @@
 }
 
 #editor>div:first-child span {
-    font-size: 2.7em;
+    font-size: 2.2em;
     font-family: 'Ubuntu Mono', monospace !important;
 }
 
@@ -146,11 +146,9 @@ ul.list-code, ul.list-code1 {
     font-size: 0.95em;
 }
 
-ul.listindent1, ol.listindent1 {
-    margin-left: 0;
-}
-.ace-line ul {
-    margin-left: 1.5em;
+ul.listtype-hone {
+    margin-bottom: 0;
+    border-bottom: none;
 }
 
 ul.listtype-hone li {
@@ -158,17 +156,39 @@ ul.listtype-hone li {
 }
 
 ul.listtype-hone li span {
-    font-size: 2.4em;
+    font-size: 2.0em;
 }
 
-#editor>div>span.b:only-child, #editor>div.toc-entry>span {
-    font-size: 2.1em;
+ul.listtype-htwo li span {
+    font-size: 1.7em;
 }
 
-div.ace-line {
-    font-size: 1em;
+ul.listtype-hthree li span {
+    font-size: 1.3em;
 }
 
+ul.listtype-hone,
+ul.listtype-htwo,
+ul.listtype-hthree { padding: 0.6em 0; }
+
+
+#hp-editor-headings:hover, #hp-editor-headings:active, #hp-editor-headings.hp-ui-button-active {
+    background-image: none;
+}
+
+#editor ul.listtype-hone li:hover,
+#editor ul.listtype-htwo li:hover,
+#editor ul.listtype-hthree li:hover {
+    background-position: 0px 8px;
+}
+
+ul.listtype-hone li,
+ul.listtype-htwo li,
 ul.listtype-hthree li {
-    font-size: 1.8em;
+    margin-left: -2em;
+    padding-left: 1.3em;
 }
+
+#toc-div .toc-entry.level1 { margin-left: 0 !important; }
+#toc-div .toc-entry.level2 { margin-left: 1em !important; }
+#toc-div .toc-entry.level3 { margin-left: 2em !important; }

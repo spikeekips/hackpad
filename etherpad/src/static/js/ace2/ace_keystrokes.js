@@ -673,6 +673,7 @@ ace.keystrokes = function(editor) {
                     currentListType)[2]) + 1;
               }
 
+              /*
               if (searchSet[i].listType == "htwo") {
                 editor.performDocumentReplaceRange([lineNum, 0],
                     [lineNum, macroLength + lineMarker], " ");
@@ -680,7 +681,8 @@ ace.keystrokes = function(editor) {
                     editor.markerfulLineAndChar(lineNum, 0),
                     editor.markerfulLineAndChar(lineNum, 1), true);
                 editor.setAttributeOnLine(lineNum, "bold", true);
-              } else if (searchSet[i].listType == "table") {
+              } else */
+              if (searchSet[i].listType == "table") {
                 editor.performDocumentReplaceRange([lineNum, 0],
                     [lineNum, macroLength + lineMarker], "*",
                     [['table', '123']]);

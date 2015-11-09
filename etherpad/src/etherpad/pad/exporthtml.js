@@ -306,6 +306,13 @@ function getPadHTML(pad, revNum, removeTitleLine, unescapeCodeFragment, absolute
       continue;
     }
 
+    if (line.listTypeName == "hthree") {
+      // todo pop all lists
+      _popAllLists(lists);
+      pieces.push('<h4>'+line.text + '</h4>');
+      continue;
+    }
+
     if (line.listLevel || lists.length > 0) {
       // do list stuff
       var whichList = -1; // index into lists or -1

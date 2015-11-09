@@ -9,7 +9,7 @@
     var menu = [
       { href: '/ep/pad/summary/' + encodeURIComponent(localPadId), label: N_('View History'), },
       { 'data-click': 'showembeddialog', label: N_('Embed'), },
-      { href: '/ep/pad/static/' + encodeURIComponent(localPadId), label: N_('Print'), },
+      { href: '/ep/pad/static/' + encodeURIComponent(localPadId), label: N_('Print'), attrs: 'target="_blank"'},
       { href: '/ep/pad/export/' + encodeURIComponent(localPadId) + '/latest?format=md', label: N_('Export Markdown'), },
       { href: '/ep/pad/export/' + encodeURIComponent(localPadId) + '/latest?format=txt', label: N_('Export TXT'), },
       { href: '/ep/pad/export/' + encodeURIComponent(localPadId) + '/latest?format=html', label: N_('Export HTML'), }

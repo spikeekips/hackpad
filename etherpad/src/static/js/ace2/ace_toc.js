@@ -85,12 +85,25 @@ ace.ui.toc = function(editor) {
       var lineTextLength = lineText.length;
       var lineListType = editor.getLineListType(i);
       var distBelowTop = lineNode.offsetTop;
+      var newListType = {'hone': 0, 'htwo': 1, 'hthree': 2};
 
+      listType = /([a-z]+)([12345678])/.exec(lineListType);
+      if (listType && typeof newListType[listType[1]] != 'undefined') {
+        lineText = lineText.substr(lineEntry.lineMarker);
+        if (lineText && _trim(lineText).length) {
+          tempToc.push([distBelowTop, lineText, newListType[listType[1]], urlBeforeFragment +
+              editor.locationFragmentForHeading(lineText), lineNode.id]);
+        }
+      } else if (lineNode.className.indexOf("toc-entry") > -1) {
+        lineNode.className = lineNode.className.replace("toc-entry", "");
+      }
+
+      /*
       // if full line is bold add to tempToc
       if (lineListType.indexOf("hone") > -1) {
         lineText = lineText.substr(lineEntry.lineMarker);
         if (lineText && _trim(lineText).length) {
-          tempToc.push([distBelowTop, lineText, -1 /*h1*/, urlBeforeFragment +
+          tempToc.push([distBelowTop, lineText, -1, urlBeforeFragment + // -1 is h1
               editor.locationFragmentForHeading(lineText), lineNode.id]);
         }
       } else if (boldLen > 0 &&
@@ -121,6 +134,7 @@ ace.ui.toc = function(editor) {
       } else if (lineNode.className.indexOf("toc-entry") > -1) {
         lineNode.className = lineNode.className.replace("toc-entry", "");
       }
+      */
     }
 
     _halfDoneToc = [];

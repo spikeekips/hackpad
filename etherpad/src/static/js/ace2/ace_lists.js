@@ -399,8 +399,9 @@ ace.lists = function(editor) {
         level = Number(listType[1]);
       }
 
-      var newListType = {'1': 'hone', '2': 'indent', '3' :'hthree',
+      var newListType = {'1': 'hone', '2': 'htwo', '3' :'hthree',
           '0':'indent'}[headingLevel];
+
       if (newListType == "indent") {
         setLineListType(theLine, "");
       } else {
@@ -410,10 +411,10 @@ ace.lists = function(editor) {
       if (headingLevel == 0) {
         // turn off bold when returning to normal
         editor.setAttributeOnLine(theLine, "bold", false);
-      } else if (headingLevel == 2) {
+      } /* else if (headingLevel == 2) {
         // h2 is special - simulated using bold for now
         editor.setAttributeOnLine(theLine, "bold", true);
-      }
+      } */
 
       editor.getObserver().trigger('track',
           ['heading-menu-action', 'change-heading', headingLevel]);

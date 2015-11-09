@@ -50,6 +50,7 @@
           <% if (value.label || value.html) { %>
           <li><a href="<% if (value.href) { %><%= value.href %><% } else { %>#<% } %>" <% if (value.className) { %>class="<%= value.className %>"<% } %> <% if (value.id) { %> id="<%= value.id %>" <% } %>
             <% if (value['data-click']) { %> data-click="<%= value['data-click'] %>" <% } %>
+            <% if (value.attrs) { %> <%- value.attrs %> <% } %>
             <% if (options.onclick) { %> onclick="<%= options.onclick %>" <% } %>>
             <% if (value.html) { %>
               <%- value.html %>
