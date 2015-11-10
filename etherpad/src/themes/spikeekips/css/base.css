@@ -137,9 +137,16 @@ body {
     display: none;
 }
 
+@media (max-width: 1400px) {
+div.ace-line {
+    font-size: 14px;
+    line-height: 1.2em;
+}
+}
+
 #editor {
     font-family: 'Ubuntu Mono', monospace !important;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 #editor>div:first-child span {
@@ -149,7 +156,7 @@ body {
 
 .dataTable {
     font-family: 'Ubuntu Mono', monospace !important;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .dataTable th,
@@ -167,7 +174,7 @@ ul.list-code, ul.list-code1 {
 }
 
 .code {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 ul.listtype-hone {
@@ -180,15 +187,15 @@ ul.listtype-hone li {
 }
 
 ul.listtype-hone li span {
-    font-size: 2.0em;
+    font-size: 1.6em;
 }
 
 ul.listtype-htwo li span {
-    font-size: 1.7em;
+    font-size: 1.2em;
 }
 
 ul.listtype-hthree li span {
-    font-size: 1.3em;
+    font-size: 1.0em;
 }
 
 ul.listtype-hone,
@@ -216,3 +223,19 @@ ul.listtype-hthree li {
 #toc-div .toc-entry.level1 { margin-left: 0 !important; }
 #toc-div .toc-entry.level2 { margin-left: 1em !important; }
 #toc-div .toc-entry.level3 { margin-left: 2em !important; }
+
+.segment-wrapper > * {
+    zoom: 0.8;
+}
+
+ul.listindent1, ol.listindent1 {
+    margin-left: 2.5em;
+}
+
+#sidedivinner div {
+    min-width: 5em;
+}
+
+#sidedivinner {
+    line-height: 1.2em;
+}
