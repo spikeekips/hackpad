@@ -33,7 +33,7 @@ ENV HACKPAD_SUPERUSER_EMAIL_ADDRESSES ""
 ENV HACKPAD_VERBOSE true
 ENV HACKPAD_LOCATION_AFTER_SIGNOUT ""
 
-EXPOSE 9000
+EXPOSE 80
 
 # init
 RUN rm -rf /etc/service/cron /etc/service/sshd /etc/service/syslog-forwarder /etc/service/syslog-ng
