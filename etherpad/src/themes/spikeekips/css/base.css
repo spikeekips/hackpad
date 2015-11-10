@@ -166,6 +166,10 @@ ul.list-code, ul.list-code1 {
     font-size: 0.85em;
 }
 
+.code {
+    font-size: 14px;
+}
+
 ul.listtype-hone {
     margin-bottom: 0;
     border-bottom: none;
