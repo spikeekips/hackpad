@@ -223,6 +223,9 @@ ul.listtype-hthree li {
 #toc-div .toc-entry.level1 { margin-left: 0 !important; }
 #toc-div .toc-entry.level2 { margin-left: 1em !important; }
 #toc-div .toc-entry.level3 { margin-left: 2em !important; }
+#toc-div .toc-entry.level1,
+#toc-div .toc-entry.level2,
+#toc-div .toc-entry.level3 { padding-left: 0 !important; }
 
 .segment-wrapper > * {
     zoom: 0.8;
