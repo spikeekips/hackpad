@@ -239,3 +239,7 @@ ul.listindent1, ol.listindent1 {
 #sidedivinner {
     line-height: 1.2em;
 }
+
+ul.listtype-task li:before {
+    line-height: 0.8em;
+}
