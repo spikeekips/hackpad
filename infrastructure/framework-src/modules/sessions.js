@@ -192,7 +192,7 @@ function writeSessionsToDisk() {
     var dataFile = new Packages.java.io.File(appjet.config.sessionStoreDir+"/sessions-"+dateString+".jslog");
     var tmpFile = new Packages.java.io.File(dataFile.toString() + ".tmp");
     dataFile.getParentFile().mkdirs();
-    var writer = new java.io.BufferedWriter(new java.io.FileWriter(tmpFile), _BUFFER_SIZE);
+    var writer = new java.io.BufferedWriter(new OutputStreamWriter(new FileOutputStream(tmpFile), "UTF-8"), _BUFFER_SIZE);
     var map = _getCachedDb().map;
     if (! map) { return; }
     var keyIterator = map.listAllKeys().iterator();
