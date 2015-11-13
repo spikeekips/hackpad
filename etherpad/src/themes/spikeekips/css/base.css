@@ -198,11 +198,6 @@ ul.listtype-hthree li span {
     font-size: 1.0em;
 }
 
-ul.listtype-hone,
-ul.listtype-htwo,
-ul.listtype-hthree { padding: 0.6em 0; }
-
-
 #hp-editor-headings:hover, #hp-editor-headings:active, #hp-editor-headings.hp-ui-button-active {
     background-image: none;
 }
@@ -213,30 +208,22 @@ ul.listtype-hthree { padding: 0.6em 0; }
     background-position: 0px 8px;
 }
 
-ul.listtype-hone li,
-ul.listtype-htwo li,
-ul.listtype-hthree li {
-    margin-left: -2em;
-    padding-left: 1.3em;
-}
-
-#toc-div .toc-entry.level1 { margin-left: 0 !important; }
-#toc-div .toc-entry.level2 { margin-left: 1em !important; }
-#toc-div .toc-entry.level3 { margin-left: 2em !important; }
-#toc-div .toc-entry.level1,
-#toc-div .toc-entry.level2,
-#toc-div .toc-entry.level3 { padding-left: 0.6em !important; }
-
 .segment-wrapper > * {
     zoom: 0.8;
 }
 
-ul.listindent1, ol.listindent1 {
-    margin-left: 2.5em;
+#sidedivinner div {
+    min-width: 4em;
 }
 
-#sidedivinner div {
-    min-width: 5em;
+#sidediv div {
+    left: -1.8em;
+    line-height: 1.8em;
+}
+
+#sidedivinner > div > a.lang-menu {
+    position: absolute;
+    right: 0.3em;
 }
 
 #sidedivinner {
@@ -246,3 +233,22 @@ ul.listindent1, ol.listindent1 {
 ul.listtype-task li:before {
     line-height: 0.8em;
 }
+
+.ace-line ul {
+    margin-left: 0;
+}
+
+#editor ul.listtype-hone,
+#editor ul.listtype-htwo,
+#editor ul.listtype-hthree {
+    padding: 2.2em 0 0.3em 0;
+}
+
+ul.listindent1, ol.listindent1 {margin-left:    0em; }
+ul.listindent2, ol.listindent2 {margin-left:  1.5em; }
+ul.listindent3, ol.listindent3 {margin-left:  3.0em; }
+ul.listindent4, ol.listindent4 {margin-left:  4.5em; }
+ul.listindent5, ol.listindent5 {margin-left:  6.0em; }
+ul.listindent6, ol.listindent6 {margin-left:  7.5em; }
+ul.listindent7, ol.listindent7 {margin-left:  9.0em; }
+ul.listindent8, ol.listindent8 {margin-left: 10.5em; }
