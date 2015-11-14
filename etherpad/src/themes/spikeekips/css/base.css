@@ -252,3 +252,13 @@ ul.listindent5, ol.listindent5 {margin-left:  6.0em; }
 ul.listindent6, ol.listindent6 {margin-left:  7.5em; }
 ul.listindent7, ol.listindent7 {margin-left:  9.0em; }
 ul.listindent8, ol.listindent8 {margin-left: 10.5em; }
+
+.hp-profile-photo {
+    float: right;
+    max-width: 70%;
+    max-height: 70%;
+    min-width: 100px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    padding: 0.1em;
+}
