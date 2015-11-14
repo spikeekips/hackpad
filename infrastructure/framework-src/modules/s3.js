@@ -48,7 +48,11 @@ function put(bucketName, keyName, bytes, isPublicRead, contentType) {
   }
 }
 
-function getURL(bucketName, keyName, useHTTP) {
+function getURL(bucketName, keyName, useHTTP, fromS3) {
+  if (fromS3) {
+    _init();
+    return S3.getResourceUrl(bucketName, keyName);
+  }
   return (useHTTP?"http":"https") + "://s3.amazonaws.com/" + getBucketName(bucketName) + "/" + keyName;
 }
 

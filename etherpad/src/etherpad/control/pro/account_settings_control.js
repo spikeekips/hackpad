@@ -159,7 +159,8 @@ function render_update_profile_photo_post() {
   var u = pro_accounts.getSessionProAccount();
   var upload = utils.getMultipartUpload();
   if (upload.length) {
-    s3.put("hackpad-profile-photos", u.email, upload[0].file, true, upload[0].type);
+    // TODO: `profile` directory must be created.
+    s3.put(appjet.config.s3Bucket, 'profile/' + u.email, upload[0].file, true, upload[0].type);
   }
 
   pro_accounts.setAccountHasPhotoByEmail(u.id);

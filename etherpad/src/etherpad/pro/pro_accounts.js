@@ -46,6 +46,7 @@ import("etherpad.pro.pro_ldap_support.*");
 import("etherpad.pad.padusers");
 import("etherpad.log");
 import("etherpad.pad.pad_security");
+import("etherpad.helpers");
 
 import("process.*");
 import("fastJSON")
@@ -1212,9 +1213,12 @@ function getPicById(id, large) {
 
       var photoUrl = null;
       if (r && getAccountHasPhotoByEmail(r) && !doesUserWantGravatar(r)) {
-        var cacheBustingToken =
-        photoUrl = (appjet.config.imageCDNUrl) +
-            encodeURIComponent(s3.getURL("hackpad-profile-photos", r.email, true/*http*/)+"?"+Date.now());
+            var cacheBustingToken, photoUrl;
+          if (helpers.cdn()) {
+            cacheBustingToken = photoUrl = helpers.cdn() + s3.getURL(appjet.config.s3Bucket, 'profile/' + r.email, false/*https*/)+"?"+Date.now();
+          } else {
+            cacheBustingToken = photoUrl = s3.getURL(appjet.config.s3Bucket, 'profile/' + r.email, false/*https*/, 'fromS3')+"?"+Date.now();
+          }
       } else if (r && r.fullName == "The Hackpad Team") {
         photoUrl = "/static/img/hackpad-logo.png";
       } else if (r && r.fbid && !doesUserWantGravatar(r)) {
