@@ -52,6 +52,7 @@ WORKDIR /hackpad
 
 RUN echo '' > ./bin/exports.sh
 RUN ./bin/build.sh
+ADD contrib/scripts/oauth2_proxy_ssoscript /oauth2_proxy_ssoscript
 
 # clean
 RUN apt-get remove -y $(dpkg -l | grep '\-dev' | awk '{print $2}') dbus python3-dbus dosfstools eject lsb-release syslog-ng-core net-tools python3-gi openssh-client openssh-server openssh-sftp-server parted cron language-pack-en language-pack-en-base

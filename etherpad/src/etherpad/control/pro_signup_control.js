@@ -252,7 +252,7 @@ function render_main_post() {
 
   if (ok) {
     mixpanel.track('site-created');
-    response.redirect('http://'+subdomain+"."+appjet.config['etherpad.canonicalDomain']+'/ep/finish-activation');
+    response.redirect(request.scheme + '://'+subdomain+"."+appjet.config['etherpad.canonicalDomain']+'/ep/finish-activation');
   } else {
     response.write("There was an error processing your request.");
   }

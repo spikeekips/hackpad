@@ -235,7 +235,7 @@ function render_sign_in_get() {
   var asNewAccount = request.params.new;
 
   // deal with password reset
-  if (request.params.euid && request.params.tp) {
+  if (! appjet.config['noAuth'] && request.params.euid && request.params.tp) {
     var accountId = pro_accounts.getUserIdByEncryptedId(request.params.euid);
     var passwordResetAccount = pro_accounts.getAccountById(accountId);
 

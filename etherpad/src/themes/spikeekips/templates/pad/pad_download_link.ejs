@@ -13,15 +13,15 @@ See the License for the specific language governing permissions and
 limitations under the License. */ %><%
 
 var host = request.host;
-helpers.addToHead('<meta http-equiv="refresh" content="0;url=http://'+host+'/'+padId+'" />');
+helpers.addToHead('<meta http-equiv="refresh" content="0;url=' + request.scheme + '://'+host+'/'+padId+'" />');
 
 %>
 
 <div id="refreshpage">
   <h1>Etherpad</h1>
 
-  <p>This pad document, <a href="http://<%= host %>/<%= padId %>"><%= padId %></a>, is stored on <a href="http://<%= host %>"><%= host %></a>. Please click the link below to access this pad.</p>
+  <p>This pad document, <a href="<%= request.scheme %>://<%= host %>/<%= padId %>"><%= padId %></a>, is stored on <a href="<%= request.scheme %>://<%= host %>"><%= host %></a>. Please click the link below to access this pad.</p>
 
-  <a style="size: 200%; text-align: center;" href="http://<%= host %>/<%= padId %>">http://<%= host %>/<%= padId %></a>
+  <a style="size: 200%; text-align: center;" href="<%= request.scheme %>://<%= host %>/<%= padId %>"><%= request.scheme %>://<%= host %>/<%= padId %></a>
 
 </div>

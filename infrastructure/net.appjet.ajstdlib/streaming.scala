@@ -777,6 +777,8 @@ class StreamingSocketServlet extends HttpServlet {
     if (CometHostname.pattern.matcher(req.getServerName()).matches) {
       val scheme = if (req.getHeader("X-Scheme") != null) {
         req.getHeader("X-Scheme");
+      } else if (req.getHeader("X-Forwarded-Proto") != null) {
+        req.getHeader("X-Forwarded-Proto");
       } else {
         req.getScheme();
       }
@@ -792,6 +794,8 @@ class StreamingSocketServlet extends HttpServlet {
     } else if (CometSubdomainHostname.pattern.matcher(req.getServerName()).matches) {
       val scheme = if (req.getHeader("X-Scheme") != null) {
         req.getHeader("X-Scheme");
+      } else if (req.getHeader("X-Forwarded-Proto") != null) {
+        req.getHeader("X-Forwarded-Proto");
       } else {
         req.getScheme();
       }

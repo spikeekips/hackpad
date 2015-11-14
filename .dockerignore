@@ -1,4 +1,4 @@
-.git
+.git*
 .*
 CONTRIBUTORS
 COPYING
@@ -7,6 +7,6 @@ Dockerfile*
 INSTALL
 LICENSE
 README.md
-contrib
+#contrib
 client
 etherpad/data/*

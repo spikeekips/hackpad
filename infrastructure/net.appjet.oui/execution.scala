@@ -66,7 +66,16 @@ class RequestWrapper(val req: HttpServletRequest) {
   lazy val method = req.getMethod();
   lazy val scheme = {
     val xscheme = req.getHeader("X-Scheme");
-    if (xscheme != null) xscheme else req.getScheme();
+    if (xscheme != null) {
+      xscheme;
+    } else {
+      val xscheme_forward = req.getHeader("X-Forwarded-Proto");
+      if (xscheme_forward != null) {
+        xscheme_forward;
+      } else {
+        req.getScheme();
+      }
+    }
   }
   lazy val clientAddr = {
     val ip = req.getHeader("X-Real-Ip");

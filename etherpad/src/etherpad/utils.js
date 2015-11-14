@@ -651,7 +651,7 @@ function isAPIRequest() {
 
 function httpsHost(h) {
   h = h.split(":")[0];  // strip any existing port
-  if (appjet.config.listenSecurePort != "443" && !appjet.config.hidePorts) {
+  if (appjet.config.listenSecurePort && appjet.config.listenSecurePort != "443" && !appjet.config.hidePorts) {
     h = (h + ":" + appjet.config.listenSecurePort);
   }
   return h;

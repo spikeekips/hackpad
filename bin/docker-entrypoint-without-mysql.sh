@@ -36,10 +36,12 @@ sed 's:solrHostPort = 127.0.0.1\:9000:solrHostPort = 127.0.0.1\:80:'    -i'' eth
 [ -z "${HACKPAD_SUPERUSER_EMAIL_ADDRESSES}" ]         || sed "s:__email_addresses_with_admin_access__:${HACKPAD_SUPERUSER_EMAIL_ADDRESSES}:"         -i'' etherpad/etc/etherpad.local.properties
 [ -z "${HACKPAD_BRAND_NAME}" ]                        || sed "s:customBrandingName = .*:customBrandingName = ${HACKPAD_BRAND_NAME}:"                 -i'' etherpad/etc/etherpad.local.properties
 [ -z "${HACKPAD_IS_PRODUCTION}" ]                     || sed "s:etherpad.fakeProduction = .*:etherpad.fakeProduction = ${HACKPAD_IS_PRODUCTION}:"    -i'' etherpad/etc/etherpad.local.properties
-[ -z "${HACKPAD_DOMAIN}" ]                            || echo "etherpad.canonicalDomain = ${HACKPAD_DOMAIN}"    >> etherpad/etc/etherpad.local.properties
-[ -z "${HACKPAD_SSOSCRIPT}" ]                         || echo "etherpad.SSOScript = ${HACKPAD_SSOSCRIPT}"       >> etherpad/etc/etherpad.local.properties
-[ -z "${HACKPAD_VERBOSE}" ]                           || echo "verbose = ${HACKPAD_VERBOSE}"                    >> etherpad/etc/etherpad.local.properties
-[ -z "${HACKPAD_SMTP_SERVER}" ]                       || echo "smtpServer = ${HACKPAD_SMTP_SERVER}"             >> etherpad/etc/etherpad.local.properties
+[ -z "${HACKPAD_USE_HTTPS_URLS}" ]                    || sed "s:useHttpsUrls = .*:useHttpsUrls = ${HACKPAD_USE_HTTPS_URLS}:"                         -i'' etherpad/etc/etherpad.local.properties
+[ -z "${HACKPAD_DOMAIN}" ]                            || echo "etherpad.canonicalDomain = ${HACKPAD_DOMAIN}"                                         >> etherpad/etc/etherpad.local.properties
+[ -z "${HACKPAD_SSOSCRIPT}" ]                         || echo "etherpad.SSOScript = ${HACKPAD_SSOSCRIPT}"                                            >> etherpad/etc/etherpad.local.properties
+[ -z "${HACKPAD_VERBOSE}" ]                           || echo "verbose = ${HACKPAD_VERBOSE}"                                                         >> etherpad/etc/etherpad.local.properties
+[ -z "${HACKPAD_SMTP_SERVER}" ]                       || echo "smtpServer = ${HACKPAD_SMTP_SERVER}"                                                  >> etherpad/etc/etherpad.local.properties
+[ -z "${HACKPAD_NOAUTH}" ]                            || echo "noAuth = ${HACKPAD_NOAUTH}"                                                           >> etherpad/etc/etherpad.local.properties
 
 sed "s:__location_after_signout__:${HACKPAD_LOCATION_AFTER_SIGNOUT}:"                       -i'' etherpad/etc/etherpad.local.properties
 
