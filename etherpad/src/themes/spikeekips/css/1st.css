@@ -262,3 +262,40 @@ ul.listindent8, ol.listindent8 {margin-left: 10.5em; }
     border: 1px solid grey;
     padding: 0.1em;
 }
+
+.tab_content {
+    font-size: inherit;
+}
+
+table#t-pro-config th, table#t-pro-config td {
+    padding: 0.3em;
+}
+
+table#t-pro-config td input[type='text'] {
+    padding: 0.3em 0.6em;
+    font-size: 0.7em;
+}
+
+ul.tabs li a {
+    font-size: 0.9em;
+}
+
+.manage-accounts {
+    font-size: 0.9em !important;
+}
+
+table#pne-config {
+    font-size: inherit;
+}
+
+.streamtable .ace-line-author {
+    font-size: inherit;
+}
+
+#toc-div .toc-entry.level1 {
+    padding-left: 1em !important;
+}
+
+#toc-div .toc-entry.level1 { padding-left: 1.0em !important; }
+#toc-div .toc-entry.level2 { padding-left: 1.8em !important; }
+#toc-div .toc-entry.level3 { padding-left: 2.6em !important; }

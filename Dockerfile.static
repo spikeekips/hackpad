@@ -1,0 +1,6 @@
+FROM busybox
+
+ADD ./etherpad/src /hackpad/etherpad/src
+VOLUME ["/hackpad/etherpad/src"]
+
+# vim: set ft=Dockerfile:
