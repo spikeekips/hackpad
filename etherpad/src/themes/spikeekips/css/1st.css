@@ -299,3 +299,9 @@ table#pne-config {
 #toc-div .toc-entry.level1 { padding-left: 1.0em !important; }
 #toc-div .toc-entry.level2 { padding-left: 1.8em !important; }
 #toc-div .toc-entry.level3 { padding-left: 2.6em !important; }
+
+#account-dropdown .profile-pic {
+    border-radius: 50%;
+    border: 1px solid grey;
+    padding: 0.1em;
+}
