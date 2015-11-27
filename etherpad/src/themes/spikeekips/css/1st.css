@@ -305,3 +305,10 @@ table#pne-config {
     border: 1px solid grey;
     padding: 0.1em;
 }
+
+
+.ace-line {padding-bottom: 0.9em;}
+.ace-line.line-list-type-bullet {padding-bottom: 0;}
+.ace-line.line-list-type-code {padding-bottom: 0;}
+.ace-line.line-list-type-hone {padding-bottom: 0;}
+.ace-line.line-list-type-number {padding-bottom: 0;}
