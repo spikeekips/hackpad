@@ -42,11 +42,13 @@ function EtherpadWebSocket(id, tag) {
 
   var cometHostSuffix = window.location.host;
   // if this is a subdomain request, use a sibling comet domain to make SSL work
+  /*
   if ((cometHostSuffix.split(":").length > 1 && cometHostSuffix.split(":")[0].split(".").length == 2) ||
       (cometHostSuffix.split(".").length == 2)) {
     cometHostSuffix = '.' + cometHostSuffix;
   }
   cometHostSuffix = 'comet' + cometHostSuffix;
+  */
 
   var hiccupsLastMinute = 0;
   var hiccupResetInterval = setInterval(function() {
@@ -397,11 +399,13 @@ function EtherpadWebSocket(id, tag) {
         continue;
       }
 
+      /*
       var isiPad = navigator.userAgent.match(/iPad/i) != null;
       var isiPhone = navigator.userAgent.match(/iPhone/i) != null;
       if ((isiPhone || isiPad) && type != "streaming") {
         continue;
       }
+      */
 
       channels.push(type);
     }
@@ -833,7 +837,9 @@ function EtherpadWebSocket(id, tag) {
       timeout(timeouts, "initialConnect", 15000, cancelConnect)
 
       if (canUseSubdomains) {
-        var streamurl = "//"+randomVar()+cometHostSuffix+channelPath()+"&channel=streaming&type=iframe&new=yes&create="+(socket.readyState == socket.OPEN ? "no" : "yes")+"&seq="+lastReceivedSeqNumber+tagArg;
+        var streamhost = canUseSubdomains ? (randomVar()+cometHostSuffix) : cometHostSuffix;
+        //var streamurl = "//"+randomVar()+cometHostSuffix+channelPath()+"&channel=streaming&type=iframe&new=yes&create="+(socket.readyState == socket.OPEN ? "no" : "yes")+"&seq="+lastReceivedSeqNumber+tagArg;
+        var streamurl = "//"+streamhost+channelPath()+"&channel=streaming&type=iframe&new=yes&create="+(socket.readyState == socket.OPEN ? "no" : "yes")+"&seq="+lastReceivedSeqNumber+tagArg;
         log("stream to: "+streamurl);
         if ($ && $.browser.opera) {
           // set up the opera stream; requires jquery because, why not?
@@ -914,7 +920,9 @@ function EtherpadWebSocket(id, tag) {
 
   // long-polling related stuff.
   function iframePath(key) {
-    return "//" + key + cometHostSuffix + "%contextPath%/xhrXdFrame";
+    //return "//" + key + cometHostSuffix + "%contextPath%/xhrXdFrame";
+    var streamhost = canUseSubdomains ? (key + cometHostSuffix) : cometHostSuffix;
+    return "//" + streamhost + "%contextPath%/xhrXdFrame";
   }
 
   function createHiddenDiv() {
