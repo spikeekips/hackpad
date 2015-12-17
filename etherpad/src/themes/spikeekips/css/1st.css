@@ -137,12 +137,14 @@ body {
     display: none;
 }
 
+/*
 @media (max-width: 1400px) {
 div.ace-line {
     font-size: 14px;
     line-height: 1.2em;
 }
 }
+*/
 
 #editor {
     font-family: 'Ubuntu Mono', monospace !important;
